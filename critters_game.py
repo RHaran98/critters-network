@@ -49,7 +49,8 @@ class Player():
 	def set_pos(self,pos):
 		x,y = pos
 		if (x < self.board.x and y < self.board.y) and (x >=0 and y >=0):
-			self.pos = pos
+			if pos not in self.board.get_occupied_positions():
+				self.pos = pos
 
 	def right(self):
 		x,y = self.pos
